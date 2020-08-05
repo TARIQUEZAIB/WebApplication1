@@ -14,7 +14,7 @@ namespace WebApplication1
         {
             if (!IsPostBack)
             {
-                TextBox1.Text = "0"
+                TextBox1.Text = "0";
             }
 
         }
