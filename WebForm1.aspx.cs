@@ -12,9 +12,10 @@ namespace WebApplication1
         int ClicksCount = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //LoadCity();
+            
             if (!IsPostBack)
             {
+                LoadCity();
                 TextBox1.Text = "0";
             }
         }
