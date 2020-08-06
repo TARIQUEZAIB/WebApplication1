@@ -26,6 +26,7 @@ namespace WebApplication1
             int ClicksCount = (int)Session["Clicks"] + 1;
             TextBox1.Text = ClicksCount.ToString();
             Session["Clicks"] = ClicksCount;
+            Response.Redirect("WebForm1.aspx");
         }
     }
 }

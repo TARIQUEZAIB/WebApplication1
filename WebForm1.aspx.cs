@@ -12,11 +12,18 @@ namespace WebApplication1
         int ClicksCount = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //LoadCity();
             if (!IsPostBack)
             {
                 TextBox1.Text = "0";
             }
+        }
 
+        private void LoadCity() {
+            
+            ddlCity.Items.Add(new ListItem("USA", "USA"));
+            ddlCity.Items.Add(new ListItem("India", "India"));
+            ddlCity.Items.Add(new ListItem("Nepal", "Nepal"));
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -24,15 +31,16 @@ namespace WebApplication1
             //ClicksCount = ClicksCount + 1;
             //TextBox1.Text = ClicksCount.ToString();
 
-            //if (ViewState["Clicks"] != null)
-            //{
-            //    ClicksCount = (int)ViewState["Clicks"] + 1;
-            //}
-            //TextBox1.Text = ClicksCount.ToString(); ;
-            //ViewState["Clicks"] = ClicksCount;
+            if (Session["Clicks"] != null)
+            {
+                ClicksCount = (int)Session["Clicks"] + 1;
+            }
+            TextBox1.Text = ClicksCount.ToString(); ;
+            Session["Clicks"] = ClicksCount;
 
-            int ClicksCount = Convert.ToInt32(TextBox1.Text) + 1;
-            TextBox1.Text = ClicksCount.ToString();
+            //int ClicksCount = Convert.ToInt32(TextBox1.Text) + 1;
+            //TextBox1.Text = ClicksCount.ToString();
+            Response.Redirect("WebForm2.aspx");
         }
     }
 }
