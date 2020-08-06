@@ -29,7 +29,6 @@
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:NorthwindConnectionString %>" SelectCommand="SELECT [EmployeeID], [LastName], [FirstName] FROM [Employees]"></asp:SqlDataSource>
-
     </form>
 </body>
 </html>
